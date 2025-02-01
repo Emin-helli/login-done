@@ -5,10 +5,13 @@ export default function Index() {
   const {user}=useUser();
 
   return (
-     <View style={{ flex: 1 }}>
-   
-      <Redirect href={'/login'} />
-
-    </View>
+    <View style={{ flex: 1 }}>
+    {!user ? (
+      <Redirect href="/login" />
+    ) : (
+      <Redirect href="/(tabs)/home" />  
+    )}
+  </View>
+  
   );
 }

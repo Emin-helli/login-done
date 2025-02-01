@@ -1,3 +1,5 @@
+
+
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react';
 import Colors from './../../constants/Colors';
@@ -32,7 +34,7 @@ export default function LoginScreen() {
   const onPress = React.useCallback(async () => {
     try {
       const { createdSessionId, signIn, signUp, setActive } = await startOAuthFlow({
-        redirectUrl: Linking.createURL('/dashboard', { scheme: 'myapp' }),
+        redirectUrl: Linking.createURL('/(tabs)/home', { scheme: 'myapp' }),
       })
 
       // If sign in was successful, set the active session
@@ -116,4 +118,3 @@ const styles = StyleSheet.create({
     marginTop: 0,
   }
 });
-
